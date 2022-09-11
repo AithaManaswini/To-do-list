@@ -1,0 +1,161 @@
+/* to remove basic styling*/
+/* absolute position-positioned relative to the first parent element that has position ither than static and relative position is positioned relative to its normal postion */
+/* :before and :after adds elements before and after something */
+/* 1 rem =font size of the html element which is 16px by default*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /*background-image:linear-gradient(90deg,purple,green,blue);*/
+    /*background-image: linear-gradient(90deg,#AA96DA,#C5FAD5,#FFFFD2) ;*/
+    background-image: linear-gradient(90deg,#E2D1F9,#317773);
+    color:darkslategrey;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*background-image:linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red) ; */
+}
+header{
+    font-size:1.5rem;
+    margin-top:2rem;
+    display: flex;
+    /*rem is relative to the font size of root element*/
+}
+header,form{
+    min-height: 5vh;
+    min-width: 20vw;
+    display: flex;
+    justify-content: center; /*horizontal centre flex*/
+    align-items: center; /*vertical centre flex*/
+}
+form input{
+    margin-right: 0.25rem;
+    min-width: 30%;
+}
+form input,form button{
+    margin-top: 2vh;
+    padding:0.5rem ; /*space between element and border*/
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    background: #E2D1F9;
+}
+form button{
+    color:cadetblue ;
+    cursor: pointer;
+    transition:all 0.3s ease ; 
+    background:azure;
+}
+form button:hover{
+    color:azure;
+    background: cadetblue;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style-type:none;
+    padding:0.5rem;
+}
+.todo{
+    background-image: linear-gradient(90deg,#E2D1F9,#317773);
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
+    /*background:#E2D1F9;*/
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    transition: all 0.5s ease ;
+    
+}
+.todo-item{
+    /*color: #317773;*/
+    color: white;
+    font-size: 1rem;
+    flex:1; /*has all the space after remaining elements are filled to itself*/
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+.trash-btn,.complete-btn{
+    color:cadetblue ;
+    background:azure;
+    border: none;
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.fa-trash,.fa-check{
+    pointer-events: none; /* to click anywhere on the pointer*/
+}
+.fa-heart{
+    color:azure;
+}
+
+.score{
+   display: flex;
+
+    position: absolute;
+    right: 0;
+}
+.completed{
+    text-decoration:line-through ;
+    opacity:0.75;
+}
+.fall{
+    transform:translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+.show{
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+select,option{
+    /*remove all styles*/
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    background-image: none;
+}
+
+.select{
+    position: relative;
+    margin:1rem;
+    overflow: hidden;
+}
+
+select,option{
+    color:cadetblue;
+    width:10rem;
+    cursor:pointer;
+    padding: 1rem;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: azure;
+    pointer-events: none;
+    top:0;
+    right:0;
+    padding:1rem;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background:cadetblue;
+    color:azure;
+    
+}
+
