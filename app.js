@@ -181,4 +181,48 @@ function removelocaltodos(todo){
 
 }
 
-f
+const colors=["#3CC157", "#2AA7FF","#1CA335","#9D8B11","#A3911C", "#1B1B1B",'#A3341C', '#A31C5B','#1C83A3',"#FCBC0F", "#F85F36","#2A2B2C"];
+const numballs=500;
+const balls=[];
+
+for(let i=0;i<numballs;i++){
+    let ball=document.createElement('div');
+    ball.classList.add("ball");
+    ball.style.borderRadius=`${Math.random()*100}%`;
+    ball.style.background=colors[Math.floor(Math.random()*colors.length)];
+    ball.style.left=`${Math.floor(Math.random()*100)}vw`;
+    ball.style.right=`${Math.floor(Math.random()*100)}vh`;
+    ball.style.transform=`scale(${Math.random()})`;
+    ball.style.width=`${Math.random()}em`;
+    ball.style.height=ball.style.width;
+    balls.push(ball);
+    console.log(balls);
+    document.body.append(ball);
+}
+
+    balls.forEach((el,i,ra) => {
+        let to={
+            x:Math.random()*(i%2==0?-11:11),
+            y:Math.random()*12
+        };
+    let anim=el.animate(
+        [
+        {transform:"translate(0,0)"},
+        {transform:`translate(${to.x}rem,${to.y}rem)`}
+        ],
+        {
+            duration:(Math.random()+1)*2000,
+            direction:"alternate",
+            fill:"both",
+            iterations:Infinity,
+            easing:"ease-in-out"
+        }
+    );
+    });
+
+
+    
+
+
+
+
